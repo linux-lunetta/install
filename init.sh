@@ -86,6 +86,7 @@ locale-gen &&
 ## EMULATOR
 
 ## android
+# pacman -S waydroid
 # waydroid init -s GAPPS &&
 
 
