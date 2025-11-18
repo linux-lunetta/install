@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(pwd)/post/config
+source /install/creamie/post/config
 
 if [[ ! -z $(findmnt --mountpoint /mnt) ]]; then 
   umount -R /mnt
