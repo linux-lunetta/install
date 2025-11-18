@@ -1,1 +1,5 @@
 #!/bin/bash
+
+
+PROCDISK=()
+DATADISK=()
