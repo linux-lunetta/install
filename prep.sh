@@ -65,7 +65,7 @@ mount /dev/data/home /mnt/home/family &&
 pacstrap /mnt base &&
 
 genfstab -U /mnt > /mnt/etc/fstab &&
-cp -fr post /mnt &&
+cp -fr $(pwd)/post /mnt &&
 
 
 arch-chroot /mnt /bin/bash /post/init.sh
