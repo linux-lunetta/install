@@ -9,14 +9,14 @@ if [[ ! -z $(findmnt --mountpoint /mnt) ]]; then
   umount -R /mnt
 fi
 
-if [[ $(cryptsetup isLuks $DISKPROC) == true ]]; then 
+if [[ $(cryptsetup isLuks $DISKPROC && echo 1 ) == true ]]; then 
 	cryptsetup luksOpen $DISKPROC proc
 else
 	cryptsetup luksFormat --sectore-size $DISKPROC &&
 	cryptsetup luksOpen $DISKPROC proc
 fi
 
-if [[ $(cryptsetup isLuks $DISKDATA) == true ]]; then 
+if [[ $(cryptsetup isLuks $DISKDATA && echo 1 ) == true ]]; then 
 	cryptsetup luksOpen $DISKDATA proc
 else
 	cryptsetup luksFormat --sectore-size $DISKDATA &&
