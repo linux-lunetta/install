@@ -87,7 +87,6 @@ mount /dev/data/host /mnt/var/lib/hoster &&
 
 
 mount /dev/proc/vpac /mnt/var/cache/pacman &&
-mkdir -p /mnt/var/cache/pacman/lib &&
 
 
 mkdir -p /mnt/var/log/audit &&
