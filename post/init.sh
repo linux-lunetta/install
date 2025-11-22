@@ -54,8 +54,10 @@ pacman -S linux-zen\
     fuse \
     btop \
     sddm \
+    sddm-kcm \
     firefox \
     kwallet \
+    weston \
     plasma \
     kwalletmanager \
     aria2 \
@@ -106,14 +108,14 @@ systemctl enable update.timer &&
 systemctl enable NetworkManager &&
 systemctl enable --global pipewire-pulse &&
 systemctl enable systemd-timesyncd.service &&
-# systemctl enable waydroid-container.service
+systemctl enable waydroid-container.service
 
 
 ##
 ## BOOTUPS
 mkdir -p /boot/{efi,kernel,loader}
 mkdir -p /boot/efi/{boot,linux,systemd,rescue}
-mv /boot/vmlinuz-linux-lqx /boot/amd-ucode.img /boot/kernel/
+mv /boot/vmlinuz-linux-zen /boot/amd-ucode.img /boot/kernel/
 rm /etc/mkinitcpio.conf
 rm -fr /etc/mkinitcpio.conf.d/
 rm /boot/initramfs-*
@@ -136,16 +138,10 @@ usermod -aG wheel net &&
 chown -R net:net /var/lib/telnet &&
 passwd net
 
-
-## MEDIA ADD
-useradd -d /home/media family &&
-chown -R family:family /home/media &&
-passwd family
-
-
+mkinitcpio -P
 ## NOTIF
 echo "
-1. config cmdline 01-boot.conf
+1. create user 
 2. config /etc/crypttab
 3. add complement userneed
 4. generate initramfs
