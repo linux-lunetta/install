@@ -64,6 +64,7 @@ pacman -S linux-zen\
     krita \
     blender \
     hiprt \
+    inkscape \
     --noconfirm &&
 
 if [[ ! -z $( lscpi | grep NVIDIA ) ]]; then
