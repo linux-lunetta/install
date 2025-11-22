@@ -99,6 +99,7 @@ locale-gen &&
 ## SERVICE
 systemctl enable sddm &&
 systemctl enable dnsmasq &&
+systemctl enable firewalld &&
 systemctl enable update.timer &&
 systemctl enable NetworkManager &&
 systemctl enable --global pipewire-pulse &&
