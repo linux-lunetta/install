@@ -80,17 +80,12 @@ pacman -S linux-zen\
     waydroid  --noconfirm &&
 
 
-if [[ ! -z $( lscpi | grep Intel ) ]]; then
+if [[ $INTELPRO == true ]]; then
     pacman -S intel-ucode 
+else
+    pacman -S amd-ucode 
 fi
 
-if [[ ! -z $( lscpi | grep NVIDIA ) ]]; then
-    pacman -S cuda 
-fi
-
-if [[ ! -z $( lscpi | grep AMD ) ]]; then
-    pacman -S hip-runtime-amd amd-ucode 
-fi
 
 ## CONFIG
 cp -fr /post/base/* / &&
