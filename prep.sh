@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /install/creamie/post/config
+source /install/post/config
 
 echo $DISKPROC;
 echo $DISKDATA;
