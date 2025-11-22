@@ -127,10 +127,10 @@ chmod +x /usr/rbin/* &&
 ## LUKSDISK
 echo "rd.luks.name=$(blkid -s UUID -o value $DISKPROC)=root root=/dev/mapper/root" > /etc/cmdline.d/01-boot.conf &&
 echo "data UUID=$(blkid -s UUID -o value $DISKDATA) none" >> /etc/crypttab 
-
 mkinitcpio -P
 
-## NOTIF
-echo "
-1. create user before logout and add user as administrator
-"
+## USERADD
+useradd -m $USERNAME &&
+usermod -aG wheel $USERNAME &&
+echo "add user passworrd" &&
+passwd  $USERNAME
