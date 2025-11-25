@@ -89,4 +89,5 @@ DISTRO_INSTALLATION_PACKAGE="linux-zen
     docker
     go
     hugo
-    obsidian"
+    obsidian
+    weston"
