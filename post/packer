@@ -80,9 +80,6 @@ DISTRO_INSTALLATION_PACKAGE="linux-zen
     php-gd
     php-intl
     php-sqlite
-    php-mysql
-    php-curl
-    php-mbstring
     ruby
     rustup
     nodejs-lts-iron
