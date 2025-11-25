@@ -3,7 +3,7 @@
 source /post/config
 
 #HOSTNAME
-echo "eyerise" > /etc/hostname &&
+echo "lunetta" > /etc/hostname &&
 
 ## LOCALTIME 
 ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime &&
