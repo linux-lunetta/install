@@ -10,29 +10,29 @@ source $appdir/configs/packer
 
 
 
-
 ## CLEANSING
 if [[ ! -z $(findmnt --mountpoint /mnt) ]]; then 
     umount -R /mnt
 fi
 
 
-mkfs.ext4 -F -q -b 4096 $DISKPROC &&
-mkfs.ext4 -F -q -b 4096 $DISKDATA &&
-mkfs.vfat -F32 -S 4096 -n BOOT $DISKBOOT &&
-
-
-## CREAMYSYS
+## SYSPARTED
 mkfs.ext4 -F -q -b 4096 $DISKPROC &&
 mount $DISKPROC /mnt &&
 
 
 ## BOOTINGUP
+if [[ $1 == "--purge" ]]; then
+    mkfs.vfat -F32 -S 4096 -n BOOT $DISKBOOT
+fi
 mkdir -p /mnt/boot && 
 mount -o uid=0,gid=0,dmask=007,fmask=007 $DISKBOOT /mnt/boot/ &&
 
 
 ## USERDATUM
+if [[ $1 == "--purge" ]]; then
+    mkfs.ext4 -F -q -b 4096 $DISKDATA
+fi
 mkdir -p /mnt/home &&
 mount $DISKDATA /mnt/home &&
 
@@ -67,13 +67,13 @@ fi
 
 # DISCONFIG
 cp -fr $appdir/configs /mnt/post &&
-cp -fr $appdir/scripts/define/* /mnt &&
+cp -fr $appdir/configs/define/* /mnt &&
 cp -fr $appdir/scripts/library/syscon  /mnt/post &&
 
 
 # CONFIGURE
 genfstab -U /mnt > /mnt/etc/fstab &&
-arch-chroot /mnt /bin/bash /post/sepost &&
+arch-chroot /mnt /bin/bash /post/syscon &&
 
 
 

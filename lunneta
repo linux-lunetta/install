@@ -1,42 +1,39 @@
 #!/bin/bash
 
 appids="luneta"
-appdir=/install/scripts
-reldir=$(pwd)
+appdir=$(pwd)
 
 if [[ -z $1 ]]; then
-    echo "Error : $appids command need additional paramater"
+    echo "Error : command need additional paramater"
 fi
 
 if [[ $1 == "--install" ]];then
-    /bin/bash $appdir/library/installs $appids &&
-    exit
-fi
-
-if [[ $1 == "--build" ]];then
-   /bin/bash $appdir/library/build $appids &&
-   exit
-fi
-
-if [[ $1 == "--deploy" ]];then
-    /bin/bash $appdir/library/deploy $appids &&
+    /bin/bash $appdir/library/installs --purge &&
     exit
 fi
 
 if [[ $1 == "--reset" ]];then
-    /bin/bash $appdir/library/reseter $appids &&
+    /bin/bash /bin/bash $appdir/library/installs &&
+    exit
+fi
+
+
+if [[ $1 == "--build" ]];then
+   /bin/bash $appdir/library/build &&
+   exit
+fi
+
+if [[ $1 == "--deploy" ]];then
+    /bin/bash $appdir/library/deploy &&
     exit
 fi
 
 if [[ $1 == "--getapp" ]];then
-    /bin/bash $(pwd)/scripts/library/getpkg $reldir $appids &&
+    /bin/bash $appdir/library/getpkg $appdir &&
     exit
 fi
 
 if [[ $1 == "--update" ]];then
-    echo "pull repository" && git pull && 
-    echo "populating file" && git add . &&
-    echo "commit  changes" && git commit -m "$(date)" &&
-    echo "push to gitrepo" && git push &&
+    /bin/bash $appdir/library/repoup &&
     exit
 fi

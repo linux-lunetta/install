@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-source "$1/scripts/chroot/packer"
+source "$1/config/packer"
 
 
 ## validate packar
@@ -21,4 +21,4 @@ fi
 
 ## download packar
 sudo pacman --sync --downloadonly --noconfirm --cachedir "$1/packer $DISTRO_INSTALLATION_PACKAGE" &&
-sudo repo-add "$1/packer/$2.db.tar.zst" "$1/packer/*.pkg.tar.zst"
+sudo repo-add "$1/packer/$DISTRO_UNIQ.db.tar.zst" "$1/packer/*.pkg.tar.zst"
