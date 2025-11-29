@@ -4,9 +4,9 @@ appdir=/install
 
 
 ## CONFIGURE
-nano   $appdir/configs/profile &&
-source $appdir/configs/profile
-source $appdir/configs/packer
+nano   $appdir/config/profile &&
+source $appdir/config/profile
+source $appdir/config/packer
 
 
 
@@ -67,8 +67,8 @@ fi
 
 # DISCONFIG
 cp -fr $appdir/configs /mnt/post &&
-cp -fr $appdir/configs/define/* /mnt &&
-cp -fr $appdir/scripts/library/syscon  /mnt/post &&
+cp -fr $appdir/library/define/* /mnt &&
+cp -fr $appdir/library/syscon   /mnt/post/ &&
 
 
 # CONFIGURE
