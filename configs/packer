@@ -1,0 +1,107 @@
+DISTRO_NAME="Lunetta"
+DISTRO_UNIQ="lunetta"
+
+DISTRO_INSTALLATION_PACKAGE="base
+    base-devel
+    linux-zen
+    scx-scheds
+    wireless-regdb 
+    grub
+    efibootmgr
+    os-prober
+	iptables-nft 
+    mkinitcpio 
+    mesa  
+    linux-firmware 
+    sof-firmware 
+    openssh 
+    firewalld 
+    bluez-utils 
+    dnsmasq 
+    networkmanager 
+    neovim  
+    jack2 
+    pipewire 
+    wireplumber 
+    pipewire-alsa 
+    pipewire-pulse 
+    ttf-droid 
+    kitty-terminfo 
+    bash-completion 
+    git 
+    wget 
+	aria2 
+    unzip 
+    flatpak 
+	firefox 
+    fuse 
+    btop 
+    gdm
+    baobab
+    gnome-shell
+    gnome-backgrounds
+    gnome-calculator
+    gnome-calendar
+    gnome-color-manager
+    gnome-console
+    gnome-disk-utility
+    gnome-font-viewer
+    gnome-keyring
+    gnome-logs
+    gnome-menus
+    gnome-session
+    gnome-control-center
+    gnome-settings-daemon
+    gnome-shell
+    gnome-software
+    gnome-system-monitor
+    grilo-plugins
+    gvfs
+    gvfs-afc
+    gvfs-dnssd
+    gvfs-goa
+    gvfs-google
+    gvfs-gphoto2
+    gvfs-mtp
+    gvfs-nfs
+    gvfs-onedrive
+    gvfs-smb
+    gvfs-wsdd
+    loupe
+    nautilus
+    papers
+    snapshot
+    sushi
+    xdg-desktop-portal-gnome
+    xdg-user-dirs-gtk
+    evolution
+    keepassxc 
+    virt-manager
+    libvirt
+    qemu-desktop
+    podman
+    podman-desktop
+    docker
+    nginx
+    code
+    hugo
+    go
+    apparmor
+    lvm2
+    testdisk
+    btrfs-progs
+    xfsprogs
+    ntfs-3g
+    dosfstools
+    ethtool
+    rsync
+    grsync
+    grafana"
+
+
+DISTRO_DAEMON=( gdm nginx libvirtd docker.socket grafana.service )
+DISTRO_GLOBAL=( gcr-ssh-agent.socket )
+
+DAEMON_SYSTEM=( sshd dnsmasq firewalld update.timer NetworkManager systemd-timesyncd.service )
+GLOBAL_SYSTEM=( pipewire-pulse )
+

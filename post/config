@@ -1,5 +1,0 @@
-DISKBOOT=/dev/sda1
-DISKPROC=/dev/sda2
-DISKDATA=/dev/sda3
-USERNAME=fras
-TIMEZONE=Asia/Jakarta

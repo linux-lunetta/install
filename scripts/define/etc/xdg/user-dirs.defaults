@@ -1,0 +1,12 @@
+DESKTOP=Desktop
+DOWNLOAD=Downloads
+TEMPLATES=Compose
+PUBLICSHARE=Report
+DOCUMENTS=Documentation
+MUSIC=Music
+PICTURES=Pictures
+VIDEOS=Videos
+# Another alternative is:
+#MUSIC=Documents/Music
+#PICTURES=Documents/Pictures
+#VIDEOS=Documents/Videos
