@@ -4,9 +4,9 @@ appdir=/install
 
 
 ## CONFIGURE
-nano   $appdir/config/profile &&
-source $appdir/chroot/profile
-source $appdir/config/packer
+nano   $appdir/configs/profile &&
+source $appdir/configs/profile
+source $appdir/configs/packer
 
 
 
