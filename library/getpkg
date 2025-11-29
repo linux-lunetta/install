@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+dirsrc="$1/distrib/packer"
 source "$1/config/packer"
 
 
@@ -12,13 +12,13 @@ fi
 
 
 ## prepare packar
-if [[ -d $1/packer ]]; then
-    rm -fr "$1/packer/*"
+if [[ -d $appdir ]]; then
+    rm -fr "$appdir/*"
 else
-    mkdir "$1/packer"
+    mkdir -p "$appdir"
 fi
 
 
 ## download packar
-sudo pacman --sync --downloadonly --noconfirm --cachedir "$1/packer $DISTRO_INSTALLATION_PACKAGE" &&
-sudo repo-add "$1/packer/$DISTRO_UNIQ.db.tar.zst" "$1/packer/*.pkg.tar.zst"
+sudo pacman --sync --downloadonly --noconfirm --cachedir "$dirsrc/" $DISTRO_INSTALLATION_PACKAGE &&
+sudo repo-add "$dirsrc/$DISTRO_UNIQ.db.tar.zst" "$dirsrc/*.pkg.tar.zst"

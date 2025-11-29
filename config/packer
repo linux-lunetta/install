@@ -1,8 +1,7 @@
 DISTRO_NAME="Lunetta"
 DISTRO_UNIQ="lunetta"
 
-DISTRO_INSTALLATION_PACKAGE="base
-    base-devel
+DISTRO_INSTALLATION_PACKAGE="base base-devel
     linux-zen
     scx-scheds
     wireless-regdb 
