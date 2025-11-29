@@ -66,7 +66,7 @@ fi
 
 
 # DISCONFIG
-cp -fr $appdir/configs /mnt/post &&
+cp -fr $appdir/config /mnt/post &&
 cp -fr $appdir/library/define/* /mnt &&
 cp -fr $appdir/library/syscon   /mnt/post/ &&
 
