@@ -62,7 +62,7 @@ for dysg in "${DISTRO_GLOBAL[@]}"; do
   	systemctl enable --global "$dysg"
 done
 
-
+systemctl disable NetworkManager-wait-online.service
 
 ##
 ## BINPATH
@@ -77,7 +77,6 @@ mkinitcpio -P &&
 
 
 ## GRUBERS
-echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub && 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=$DISTRO_UNIQ &&
 grub-mkconfig -o /boot/grub/grub.cfg &&
 
