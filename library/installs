@@ -4,7 +4,10 @@ appdir=/install
 
 
 ## CONFIGURE
-nano   $appdir/config/profile &&
+if [[ $1 == "--purge" ]]; then
+    nano $appdir/config/profile
+fi
+
 source $appdir/config/profile
 source $appdir/config/packer
 

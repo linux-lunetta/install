@@ -1,6 +1,5 @@
 #!/bin/bash
 
-appids="luneta"
 appdir=$(pwd)
 
 if [[ -z $1 ]]; then

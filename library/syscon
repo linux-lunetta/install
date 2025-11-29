@@ -47,19 +47,19 @@ rm -fr /etc/mkinitcpio.conf.d/ &&
 ## SERVICE
 
 for sysd in "${DAEMON_SYSTEM[@]}"; do
-  systemctl enable "$sysd"
+    systemctl enable "$sysd"
 done
 
 for sysg in "${GLOBAL_SYSTEM[@]}"; do
-  systemctl enable --global "$sysg"
+  	systemctl enable --global "$sysg"
 done
 
 for dysd in "${DISTRO_DAEMON[@]}"; do
-  systemctl enable "$dysd"
+  	systemctl enable "$dysd"
 done
 
 for dysg in "${DISTRO_GLOBAL[@]}"; do
-  systemctl enable --global "$dysg"
+  	systemctl enable --global "$dysg"
 done
 
 
